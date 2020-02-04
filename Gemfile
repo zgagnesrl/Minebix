@@ -15,6 +15,7 @@ gem 'material-sass'
 gem 'bootstrap'
 gem 'devise'
 gem 'jquery-rails'
+gem 'haml'
 
 
 

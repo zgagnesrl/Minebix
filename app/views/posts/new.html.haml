@@ -1,0 +1,14 @@
+%h1 Écrire un article
+%br
+
+.card
+  = form_for :post, :url => {:controller => 'posts', :action => 'create'} do |f|
+    .card-header
+      %h5.card-title
+        = f.text_field :title, class: 'form-control', placeholder: 'Titre de l\'article'
+    .card-body
+      %p.card-text
+        = f.text_area :content, class: 'tinymce', placeholder: 'Contenu de l\'article'
+    .card-footer
+      = link_to 'Annuler la création', posts_path, class: 'btn btn-danger text-white'
+      = f.submit 'Créer l\'article', class: 'btn btn-success text-white' 
