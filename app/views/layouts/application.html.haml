@@ -1,0 +1,66 @@
+%html
+  %head
+    %title Minebix
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application'
+    = javascript_pack_tag 'application'
+
+    %script{:type => "text/javascript", :src => "https://cdn.tiny.cloud/1/1l3267mr87z3k2bm8corrkk720xv2j0j5mp6jaz42mjxns15/tinymce/5/tinymce.min.js"}
+    :javascript
+      tinymce.init({
+      selector: '.tinymce',
+      height: 500,
+      menubar: false,
+      plugins: [
+          'advlist autolink lists link image charmap print preview anchor',
+          'searchreplace visualblocks code fullscreen',
+          'insertdatetime media table paste code help wordcount'
+      ],
+          toolbar: 'undo redo | formatselect | ' +
+          ' bold italic backcolor | alignleft aligncenter ' +
+          ' alignright alignjustify | bullist numlist outdent indent |' +
+          ' removeformat | help'
+      });
+  %body
+    %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+      = link_to 'Minebix', root_path, class: 'navbar-brand'
+      .collapse.navbar-collapse
+        %ul.navbar-nav.mr-auto
+          %li.nav-item
+            = link_to 'Nouveautés', posts_path, class: 'nav-link'
+          %li.nav-item
+            = link_to 'Forums', '#', class: 'nav-link'
+          %li.nav-item
+            = link_to 'Boutique', '#', class: 'nav-link'
+        %ul.navbar-nav
+          - if user_signed_in?
+            %li.nav-item
+              = link_to 'Mon Profil', edit_user_registration_path, class: 'nav-link'
+            %li.nav-item
+              = link_to 'Déconnexion', destroy_user_session_path, method: :delete, class: 'nav-link'
+          - else
+            %li.nav-item
+              = link_to 'Connexion', new_user_session_path, class: 'nav-link'
+            %li.nav-item
+              = link_to 'Inscription', new_user_registration_path, class: 'nav-link'
+    %br
+    .container
+      - if flash.any?
+        - if flash[:danger]
+          .alert.alert-danger
+            = flash[:danger]
+        - if flash[:alert]
+          .alert.alert-danger
+            = flash[:alert]
+        - if flash[:warning]
+          .alert.alert-warning
+            = flash[:warning]
+        - if flash[:success]
+          .alert.alert-success
+            = flash[:success]
+        - if flash[:notice]
+          .alert.alert-success
+            = flash[:notice]
+
+      = yield
