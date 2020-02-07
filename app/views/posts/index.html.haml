@@ -6,9 +6,9 @@
     .card-header
       %h5.card-title= post.title
     .card-body
-      = post.content.html_safe.first(275) + '...'
+      = post.content.html_safe.first(275)
     .card-footer
       = link_to 'Consuler', post, class: 'btn btn-info text-white'
       = link_to 'Modifier', edit_post_path(post), class: 'btn btn-warning text-white'
-      = link_to 'Supprimer', post, class: 'btn btn-danger text-white', method: :delete, data: {confirm: 'Êtes-vous sur de vouloir supprimer cet article?'}
+      = link_to 'Supprimer', post, class: 'btn btn-danger text-white', method: :delete, 'data-confirm': 'Êtes-vous sur de vouloir supprimer cet article?'
   %br

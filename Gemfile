@@ -12,8 +12,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 
 gem 'material-sass'
-gem 'bootstrap'
-gem 'devise'
+gem 'bootstrap'devise
 gem 'jquery-rails'
 gem 'haml'
 
