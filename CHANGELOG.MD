@@ -1,7 +1,7 @@
 # CHANGELOGS
 All the notable changes of this projects will be listed, tagged and explained in this file.
 
-## Unreleased - 2020-02-10 13:30 - 0.0.4
+## [0.0.4] - 2020-02-1 13:30
 ### Added
 - Rolify, Roles management for users
 - CanCanCan, Permissions management for roles
@@ -14,7 +14,6 @@ All the notable changes of this projects will be listed, tagged and explained in
 - a lot of button's positions
 ### Bug
 - Devise alerts are shown in English instead of french
-
 
 ## [0.0.3] - 2020-02-04 05:30
 ### Added
