@@ -10,9 +10,13 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
+gem 'devise' # User system
+gem 'rolify' # Role system for users
+gem 'cancancan' # Permissions for users
+gem 'bcrypt' # Crypting for passwords
 
 gem 'material-sass'
-gem 'bootstrap'devise
+gem 'bootstrap'
 gem 'jquery-rails'
 gem 'haml'
 

@@ -5,5 +5,7 @@
   .card-body
     = @post.content.html_safe
   .card-footer
-    = link_to 'Retour', posts_path, class: 'btn btn-info text-white'
-    = link_to 'Modifier', edit_post_path(@post), class: 'btn btn-warning text-white'
+    = link_to 'Retour', posts_path, class: 'btn btn-primary text-white'
+    - if user_signed_in?
+      - if current_user.has_role? :admin
+        = link_to 'Modifier', edit_post_path(@post), class: 'btn btn-secondary text-white'

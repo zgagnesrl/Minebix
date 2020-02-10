@@ -10,5 +10,5 @@
       %p.card-text
         = f.text_area :content, class: 'tinymce', placeholder: 'Contenu de l\'article'
     .card-footer
+      = f.submit 'Créer l\'article', class: 'btn btn-primary text-white' 
       = link_to 'Annuler la création', posts_path, class: 'btn btn-danger text-white'
-      = f.submit 'Créer l\'article', class: 'btn btn-success text-white' 

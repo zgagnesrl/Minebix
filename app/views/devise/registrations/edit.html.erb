@@ -1,0 +1,53 @@
+<div class="container">
+ <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <div class="card text-center">
+    <div class="card-header">
+      <h4>Modifier mon profil</h4>
+    </div>
+    <div class="card-body">
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="form-group">
+        <%= f.text_field :username, class: 'form-control', placeholder: 'Nom d\'utilisateur', autofocus: true, autocomplete: "username" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.email_field :email, class: 'form-control', placeholder: 'Adresse courriel', autocomplete: "email" %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Nous attendons actuellement la confirmation pour: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.password_field :password, class: 'form-control', placeholder: 'Mot de passe (laissez vide pour ne pas modifier)', autocomplete: "new-password" %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirmation mot de passe', autocomplete: "new-password" %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :current_password, class: 'form-control', placeholder: 'Mot de passe actuel (nécessaire pour faire les modifications', autocomplete: "current-password" %>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <%= f.text_field :mcusername, class: 'form-control', placeholder: 'Nom d\'utilisateur Minecraft', autocomplete: "mcusername" %>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" value='<%= current_user.roles.pluck(:name).join(",") %>' disabled>
+        </div>
+      </div>
+
+      <% if @minimum_password_length %>
+        <small class="form-text text-muted">(Mot de passe de <%= @minimum_password_length %> charactères minimum)</small>
+      <% end %>
+    </div>
+    <div class="card-footer">
+      <div class="btn-group" role="group">
+        <%= f.submit "Mettre à jour", class: 'btn btn-primary' %>
+        <% end %>
+        <%= link_to "Cloturer mon compte", registration_path(resource_name), class: 'btn btn btn-danger', data: { confirm: "Êtes vous sur de vouloir cloturer votre compte chez nous?" }, method: :delete %>
+      </div>
+    </div>
+  </div>
+</div>

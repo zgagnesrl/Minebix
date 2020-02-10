@@ -1,9 +1,19 @@
 # CHANGELOGS
 All the notable changes of this projects will be listed, tagged and explained in this file.
 
-## Unreleased - 2020-02-00 00:00 - 0.0.4
+## Unreleased - 2020-02-10 13:30 - 0.0.4
 ### Added
-- 
+- Rolify, Roles management for users
+- CanCanCan, Permissions management for roles
+- Username and Minecraft Username to user information
+- Management permissions to admin users
+- Read-Only permissions to member users
+### Changed
+- Primary and Secondary button's color
+- a lot of buttons color
+- a lot of button's positions
+### Bug
+- Devise alerts are shown in English instead of french
 
 
 ## [0.0.3] - 2020-02-04 05:30
